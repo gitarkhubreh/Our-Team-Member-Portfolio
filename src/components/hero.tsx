@@ -1,9 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
-import { ParticleCanvas } from "/new-portfolio/hooks/particle";
+import { ParticleCanvas } from "@/components/hooks/particle"; // ✅ Corrected import
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
+
 export default function Hero() {
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 500], [0, 100]);
@@ -54,7 +54,7 @@ export default function Hero() {
               </motion.span>
               <br />
               <motion.span
-                key={currentTitle} // Ensures animation runs on change
+                key={currentTitle}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
@@ -79,20 +79,20 @@ export default function Hero() {
             </motion.p>
 
             <motion.button
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8, delay: 1.2 }}
-  whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-  className="relative overflow-hidden px-8 py-4 rounded-full bg-surface border border-white/10 hover:border-primary/30 transition-all group"
-  onClick={() => {
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-  }}
->
-  <span className="text-content group-hover:text-primary transition-colors">
-    Hire Me
-  </span>
-  <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-tertiary/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-</motion.button>
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.2 }}
+              whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+              className="relative overflow-hidden px-8 py-4 rounded-full bg-surface border border-white/10 hover:border-primary/30 transition-all group"
+              onClick={() => {
+                document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              <span className="text-content group-hover:text-primary transition-colors">
+                Hire Me
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-tertiary/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+            </motion.button>
           </motion.div>
 
           {/* Image Card */}
