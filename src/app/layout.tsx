@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Merriweather } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+// Use only valid weights (300, 400, 700, 900)
+const merriweather = Merriweather({
+  subsets: ["latin"], // Correct subset
+  weight: ['300','400','700'], // Correct weight values
+  variable: "--font-merriweather", // Custom variable name
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={merriweather.variable}>{children}</body>
     </html>
   );
 }
