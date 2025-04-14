@@ -5,7 +5,7 @@ const teamMembers = [
     name: "AbdulRehman",
     role: "Abdul Rehman is a skilled web developer, graphic designer, and video editor, passionate about creating high-quality digital solutions.",
     image: "/C1.jpeg",
-    portfolioLink: "https://portfolio-ab-nine.vercel.app/", // AbdulRehman's portfolio link
+    portfolioLink: "https://abdul-rehman-portfolio-three.vercel.app/", // AbdulRehman's portfolio link
   },
   {
     name: "Muhammad Rameez",
